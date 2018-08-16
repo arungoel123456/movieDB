@@ -1,5 +1,7 @@
 package com.example.arun.moviedb;
 
+import android.util.Log;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -12,7 +14,7 @@ public class ApiClient {
     static Retrofit getInstance(){
         if (retrofit == null) {
             Retrofit.Builder builder = new Retrofit.Builder()
-                    .baseUrl("https://api.themoviedb.org/3/movie/now_playing")
+                    .baseUrl("https://api.themoviedb.org")
                     .addConverterFactory(GsonConverterFactory.create());
             retrofit = builder.build();
         }
@@ -21,6 +23,7 @@ public class ApiClient {
 
     static MoviesService getMoviesService(){
         if(service == null){
+            Log.d("fetchData","movieservices==nuull");
             service = getInstance().create(MoviesService.class);
         }
         return service;
