@@ -6,11 +6,11 @@
     android:padding="16dp"
     android:orientation="vertical">
 
-    <!--<ImageView-->
-        <!--android:layout_width="10dp"-->
-        <!--android:layout_height="10dp"-->
-        <!--android:id="@+id/imageImageview"-->
-        <!--/>-->
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:id="@+id/imageImageview"
+        />
 
     <TextView
         android:id="@+id/titleTextview"
