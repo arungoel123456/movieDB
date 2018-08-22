@@ -6,17 +6,19 @@
     android:padding="16dp"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:id="@+id/imageImageview"
-        />
+
 
     <TextView
         android:id="@+id/titleTextview"
         android:text="Body"
         android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageImageview"
+        />
 
 </LinearLayout>

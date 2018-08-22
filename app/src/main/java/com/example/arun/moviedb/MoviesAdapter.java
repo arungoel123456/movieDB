@@ -16,10 +16,12 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder>  {
 
     ArrayList<Movie> movies;
     Context context;
+    MoviesClickListener listener;
 
-    public MoviesAdapter(Context context , ArrayList<Movie> movies ) {
+    public MoviesAdapter(Context context , ArrayList<Movie> movies , MoviesClickListener listener ) {
         this.context = context;
         this.movies= movies;
+        this.listener= listener;
     }
 
 
@@ -31,17 +33,25 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder>  {
         return new MovieViewHolder(rowLayout);
     }
     @Override
-    public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MovieViewHolder holder, int position) {
         Movie post = movies.get(position);
         holder.titleTextView.setText(post.title);
 //        MovieViewHolder.imageImageView.setImageDrawable(post.poster_path);
 
         String posterPath= post.poster_path;
 //
-        String imageUri = " http://image.tmdb.org/t/p/w1859/"+ posterPath;
+        String imageUri = "http://image.tmdb.org/t/p/w185"+ posterPath;
 //        ImageView ivBasicImage = (ImageView) findViewById0(R.id.ivBasicImage);
-        Picasso.get().load(imageUri).resize(120, 60).into(holder.imageImageView);
+        Picasso.get().load(imageUri).fit().into(holder.imageImageView);
         //Picasso.with(context).load(android_versions.get(i).getAndroid_image_url()).resize(120, 60).into(viewHolder.img_android);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                listener.onMovieClicked(view, holder.getAdapterPosition());
+            }
+        });
 
 
     }
