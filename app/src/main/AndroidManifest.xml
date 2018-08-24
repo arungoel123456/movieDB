@@ -18,7 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".ViewMore" />
+        <activity
+            android:name=".CompleteMovieDescription"
+            android:label="@string/title_activity_complete_movie_description"></activity>
     </application>
 
 </manifest>

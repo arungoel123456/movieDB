@@ -20,7 +20,6 @@ import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
-    MovieResponse playingMovies;
     RecyclerView recyclerView;
     MoviesAdapter adapter;
     ArrayList<Movie> mMovies = new ArrayList<>();
@@ -114,8 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 temp= popularMovie.results;
                 mMovies2.addAll(temp);
                 adapter2.notifyDataSetChanged();
-
-
             }
 
             @Override
@@ -126,4 +123,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+    public void viewAll(View view) {
+        Intent intent = new Intent(getApplicationContext(), ViewMore.class);
+        startActivityForResult(intent,1);
+    }
 }

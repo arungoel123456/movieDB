@@ -24,7 +24,7 @@ public class ApiClient {
 
     static MoviesService getMoviesService(){
         if(service == null){
-            Log.d("fetchData","movieservices==nuull");
+            Log.d("fetchData","movieservices==null");
             service = getInstance().create(MoviesService.class);
         }
         return service;

@@ -30,7 +30,9 @@
 
                 android:layout_alignParentTop="true"
                 android:text="view more"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentRight="true"
+                android:onClick="viewAll"
+                />
 
         </RelativeLayout>
 
