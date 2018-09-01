@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMovieClicked(View view , int position) {
                 Movie currentMovie= mMovies.get(position);
-//                Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
-//                intent.putExtra("id", currentMovie.id);
-//                startActivityForResult(intent,1);
+                Intent intent = new Intent(getApplicationContext(), CompleteMovieDescription.class);
+                intent.putExtra("id", currentMovie.id);
+                startActivityForResult(intent,1);
 
             }
         });
