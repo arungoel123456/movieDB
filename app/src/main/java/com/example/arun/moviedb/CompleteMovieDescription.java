@@ -35,6 +35,7 @@ public class CompleteMovieDescription extends AppCompatActivity {
             }
         });
 
+
         Intent intent = getIntent();
         int id = intent.getIntExtra("id", 1);
         Log.d("id", String.valueOf(id));

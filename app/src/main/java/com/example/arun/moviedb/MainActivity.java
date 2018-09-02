@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void fetchData()
     {
-        Call<MovieResponse> call = ApiClient.getMoviesService().getNowPlayingMovies();
+        Call<MovieResponse> call = ApiClient.getMoviesService().getNowPlayingMovies(1);
         call.enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
